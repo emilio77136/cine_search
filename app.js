@@ -18,7 +18,7 @@ let activeIndex = -1;
 let currentResults = [];
 const cache = new Map();
 
-/* Highlight text safely */
+/*  Highlight text safely */
 function highlight(title, query) {
   const span = document.createElement("span");
   const idx = title.toLowerCase().indexOf(query.toLowerCase());
