@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineSearch Pro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-title">Cine<em>Search</em> Pro</div>
+</div>
+
+<div class="search-section">
+  <div class="search-wrap" data-loading="false">
+    <input id="search-input" type="text" placeholder="Search for a movie..." autocomplete="off">
+    <div class="spinner"></div>
+  </div>
+  <div class="status-chip" id="status-bar">READY</div>
+</div>
+
+<div class="layout">
+
+  <!-- RESULTS -->
+  <div class="results-col">
+    <div class="col-header">
+      <span>Results</span>
+      <span id="col-count">0 films found</span>
+    </div>
+
+    <template id="result-template">
+      <li class="result-item">
+        <img class="poster" src="" alt="poster" />
+        <div class="result-info">
+          <div class="title"></div>
+          <div class="meta"></div>
+        </div>
+      </li>
+    </template>
+
+    <ul id="result-list"></ul>
+  </div>
+
+  <!-- DETAILS -->
+  <div class="detail-col">
+    <div class="detail-empty" id="detail-empty">
+      <p>Select a movie to see details</p>
+    </div>
+
+    <div class="detail-content" id="detail-content">
+      <h2 id="detail-title"></h2>
+
+      <p id="detail-overview" class="detail-line"></p>
+
+      <div class="detail-line">
+        <strong>Rating:</strong> <span id="detail-rating"></span>
+      </div>
+
+      <div class="detail-line">
+        <strong>Cast:</strong> <span id="detail-cast"></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

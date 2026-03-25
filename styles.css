@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0f1c2b;
+  --card-bg: #1a2a4d;
+  --card-bg-light: #3a5f8f;
+  --text: #fff;
+  --highlight: #ffff66;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Header */
+.masthead {
+  text-align: center;
+  padding: 16px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Active result item */
+.result-item.active {
+  background: #5dade2;
+  color: black;
+}
+
+/* Search */
+.search-section {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.search-wrap {
+  position: relative;
+  flex: 1;
+}
+
+#search-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* Spinner */
+.spinner {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  opacity: 0;
+}
+
+.search-wrap[data-loading="true"] .spinner {
+  opacity: 1;
+}
+
+@keyframes spin {
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Layout */
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  height: calc(100vh - 100px);
+}
+
+/* Results Column */
+.results-col {
+  border-right: 1px solid #333;
+  overflow-y: auto;
+}
+
+.col-header {
+  padding: 10px;
+  background: var(--card-bg);
+  display: flex;
+  justify-content: space-between;
+}
+
+.result-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+}
+
+.result-item img.poster {
+  width: 50px;
+  height: 75px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.result-item:hover {
+  background: var(--card-bg-light);
+}
+
+/* Highlighted search text */
+.highlight {
+  background: var(--highlight);
+  color: black;
+}
+
+/* Details Column */
+.detail-col {
+  padding: 20px;
+}
+
+.detail-empty {
+  text-align: center;
+  color: #aaa;
+}
+
+.detail-content {
+  display: none;
+}
+
+.detail-content.visible {
+  display: block;
+}
+
+/* Spacing for details */
+.detail-line {
+  margin-top: 12px;
+}
+
+#detail-overview {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* Highlighted labels */
+.detail-line strong {
+  color: #5dade2;
+}
+
+/* Cast pills */
+.cast-pill {
+  background: var(--card-bg-light);
+  padding: 3px 7px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+/* Trailer link */
+#detail-trailer {
+  color: #5dade2;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+#detail-trailer:hover {
+  text-decoration: underline;
+}
