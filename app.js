@@ -84,7 +84,7 @@ function updateActive() {
   items.forEach((el, i) => el.classList.toggle("active", i === activeIndex));
 }
 
-/* Search API */
+/* Search AP I */
 async function search(query) {
   if (!query) return;
 
