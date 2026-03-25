@@ -39,7 +39,7 @@ function highlight(title, query) {
   return span;
 }
 
-/* Render results using DocumentFragment */
+/*  Render results using DocumentFragment */
 function renderResults(results, query) {
   list.innerHTML = "";
   currentResults = results;
